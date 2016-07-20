@@ -1,6 +1,6 @@
 class Student {
     fullName: string;
-    constructor(public firstName, public middleInitial, public lastName) {
+    constructor(public firstName, public middleInitial, public lastName, public age) {
         this.fullName = firstName + " " + middleInitial + " " + lastName;
     }
 }
@@ -8,12 +8,13 @@ class Student {
 interface Person {
     firstName: string;
     lastName: string;
+    age: string;
 }
 
 function greeter(person : Person) {
-    return "Hello, " + person.firstName + " " + person.lastName;
+    return "Hello, " + person.firstName + " " + person.lastName + " " + person.age;
 }
 
-var user = new Student("Jane", "M.", "User");
+var user = new Student("Jane", "M.", "User", "30");
 
-document.body.innerHTML = greeter(user);
+document.querySelector("#product").innerHTML = greeter(user);

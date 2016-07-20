@@ -19,6 +19,7 @@ module.exports = function (app) {
 
   var env = app.get('env')
 
+  // template engine settings
   app.engine('.html', require('ejs').__express);
   app.set('views', config.root + '/views')
   app.set('view engine', 'ejs')
@@ -38,7 +39,7 @@ module.exports = function (app) {
     }
   }))
 
-
+  // environment settings && if the project will run on prod, it needs to be minified
   if (env === 'production') {
     app.use(express.static(path.join(config.root, 'public')))
     app.set('appPath', config.root + '/public')
@@ -50,7 +51,7 @@ module.exports = function (app) {
     app.use(errorHandler()) // error handler has to be last
   }
 
-  // TODO: move to a separate npm package
+  // supported browser check
   app.use(function (req, res, next) {
     if (!isSupportedBrowser(req.useragent)) {
       res.render('unsupported', {

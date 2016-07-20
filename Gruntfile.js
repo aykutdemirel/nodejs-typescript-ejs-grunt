@@ -106,7 +106,7 @@ module.exports = function (grunt) {
         default : {
             src: ["assets/js/*.ts", "!node_modules/**/*.ts"]
         }
-    }    
+    }
   })
 
   // Used for delaying livereload until after server has restarted
