@@ -23,21 +23,6 @@ $primary-color: #333;
     border-color: green;
 }
 
-.container {
-    width: 93.06122%;
-    max-width: 1400px;
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.imgScl {
-    height:522px;
-    padding-left: 0;
-    padding-right: 0;
-    position: relative;
-    overflow: hidden;
-}
-
 .col-1 {
     max-width: 548px;
 }
@@ -64,6 +49,21 @@ $primary-color: #333;
 
 .h-18{
     height: 18px;
+}
+
+.container {
+    width: 93.06122%;
+    max-width: 1400px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.imgScl {
+    height:522px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 @media (min-width: 75em) {
