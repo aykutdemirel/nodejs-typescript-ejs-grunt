@@ -2,6 +2,7 @@
   "node": true,
   "browser": true,
   "esnext": true,
+  "loopfunc": true,
   "bitwise": true,
   "camelcase": false,
   "curly": true,

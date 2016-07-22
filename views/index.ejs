@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <% include partials/head.ejs %>
-</head>
-<body class="container">
-
-    <header>
-        <% include partials/header.ejs %>
-    </header>
-
-    <main>
-        <div class="jumbotron">
-            <h1>This is great</h1>
-            <p>Welcome to templating using EJS</p>
-        </div>
-    </main>
-
-    <footer>
-        <% include partials/footer.ejs %>
-    </footer>
-    <div id="product"></div>
-    <script type="text/javascript" src="assets/js/core.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-</body>
+    <head>
+        <% include partials/head.ejs %>
+    </head>
+    <body>
+        <header>
+            <% include partials/header.ejs %>
+        </header>
+        <main class="container">
+            <h1>Every purpose has a perfect shape</h1>
+            <h2>Wedge blends form with functional beauty</h2>
+            <p>The essential new shape of BRAVIA blends aesthetics with functional beauty. The small footprint saves space, while sound is enhanced by larger speaker capacity.</p>
+            <div class="col-xs-5 p-0 pr-9 col-1">
+                <div class="imgScl">
+                    <img src="assets/img/img-1.jpg" class="scale" data-scale="best-fill" data-align="top-left">
+                </div>
+            </div>
+            <div class="col-xs-7 p-0 pl-9 col-2">
+                <div class="imgScl">
+                    <img src="assets/img/img-2.jpg" class="scale" data-scale="best-fill" data-align="bottom-right">
+                </div>
+            </div>
+            <div class="h-18 clear-both"></div>
+            <div class="col-xs-5 p-0 pr-9 col-1">
+                <div class="imgScl">
+                    <img src="assets/img/img-3.jpg" class="scale" data-scale="best-fill" data-align="bottom-left">
+                </div>
+            </div>
+            <div class="col-xs-7 p-0 pl-9 col-2">
+                <div class="imgScl">
+                    <img src="assets/img/img-4.jpg" class="scale" data-scale="best-fill" data-align="bottom-left">
+                </div>
+            </div>
+            <div class="h-18 clear-both"></div>
+            <script type="text/javascript">
+                debugger;
+                document.querySelectorAll(".scale").scaleImg();
+            </script>
+        </main>
+        <footer>
+            <% include partials/footer.ejs %>
+        </footer>
+        <div id="product"></div>
+    </body>
 </html>

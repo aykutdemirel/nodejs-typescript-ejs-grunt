@@ -101,11 +101,6 @@ module.exports = function (grunt) {
            'assets/css/main.css': 'assets/css/main.scss',
         }
       }
-    },
-    ts: {
-        default : {
-            src: ["assets/js/*.ts", "!node_modules/**/*.ts"]
-        }
     }
   })
 
@@ -134,7 +129,6 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'ts',
       'jshint',
       'sass',
       'express:dev',
@@ -146,7 +140,6 @@ module.exports = function (grunt) {
   })
 
   grunt.registerTask('build', [
-    'ts',
     'jshint',
     'sass'
   ])

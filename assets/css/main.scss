@@ -1,6 +1,82 @@
 
 @import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
-body{
-    font-family:arial
+$primary-color: #333;
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }
+
+.message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+.success {
+    @extend .message;
+    border-color: green;
+}
+
+.container {
+    width: 93.06122%;
+    max-width: 1400px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.imgScl {
+    height:522px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.col-1 {
+    max-width: 548px;
+}
+
+.col-2 {
+    max-width: 833px;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.pr-9 {
+    padding-right: 9px;
+}
+
+.pl-9 {
+    padding-left: 9px;
+}
+
+.clear-both{
+    clear: both;
+}
+
+.h-18{
+    height: 18px;
+}
+
+@media (min-width: 75em) {
+    .container {
+        width: 92.5%;
+    }
+    .imgScl {
+        height: 602px;
+    }
+}
+
+@media (max-width: 61.1875em) and (min-width: 48em){
+    .imgScl {
+        height: 422px;
+    }
 }
