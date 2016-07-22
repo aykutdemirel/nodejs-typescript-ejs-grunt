@@ -20,9 +20,9 @@ module.exports = function (app) {
   var env = app.get('env')
 
   // template engine settings
-  app.engine('.html', require('ejs').__express);
+  //app.engine('.html', require('ejs').__express);
   app.set('views', config.root + '/views')
-  app.set('view engine', 'ejs')
+  app.set('view engine', 'html')
 
   app.use(compress())
   app.use(useragent.express())
@@ -48,6 +48,8 @@ module.exports = function (app) {
   if (env === 'development' || env === 'test') {
     app.use(require('connect-livereload')())    
     app.use(express.static(config.root))
+    app.set('appPath', config.root + '/views')
+
     app.use(errorHandler()) // error handler has to be last
   }
 
