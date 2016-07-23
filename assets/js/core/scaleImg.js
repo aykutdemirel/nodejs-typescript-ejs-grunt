@@ -12,6 +12,11 @@ var ImageScale = function(element, options) {
 
     var parent = that.parent = options.parent?options.parent:element.parentElement;
 
+    if(parent){
+        that.hotSpot = parent.querySelector("span.plus-btn-wrapper");
+        that.hotSpotPoint = new Array(that.hotSpot.getAttribute('data-x'),that.hotSpot.getAttribute('data-y'));
+    }
+
     // Fixes: https://github.com/gestixi/image-scale/issues/1
     if (parent.style.position === 'static') {
         parent.style.position = 'relative';
@@ -82,7 +87,9 @@ ImageScale.prototype = {
             options = this.options,
             parent = this.parent,
             element = this.element,
-            img = this.img;
+            img = this.img,
+            hotSpot = this.hotSpot,
+            hotSpotPoint = this.hotSpotPoint;
 
         if (firstTime) {
             if (options.hideParentOverflow) {
@@ -179,6 +186,11 @@ ImageScale.prototype = {
         element.style.width = layout.width+'px';
         element.style.height = layout.height+'px';
         element.style.maxWidth = 'none';
+        
+        if(hotSpot){
+            hotSpot.style.top =  ((hotSpotPoint[1] * (layout.height / sourceHeight)) + (layout.y)) + 'px';
+            hotSpot.style.left = ((hotSpotPoint[0] * (layout.width / sourceWidth)) + (layout.x)) + 'px';
+        }
 
         if (firstTime && fadeInDuration) {
             element.style.display = 'none';
@@ -350,6 +362,8 @@ Object.prototype.scaleImg = function (options) {
         scale: 'best-fill',
         align: 'center',
         parent: null,
+        hotSpot:null,
+        hotSpotPoint:null,
         hideParentOverflow: true,
         fadeInDuration: 0,
         rescaleOnResize: true,

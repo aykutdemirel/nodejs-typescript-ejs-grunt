@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Index Page</title>
-
     <script src="bower_components/react/react.js"></script>
     <script src="bower_components/react/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-    <script type="text/javascript" src="assets/js/data.js"></script>
-    <script type="text/javascript" src="assets/js/scaleImg.js"></script>
+    <script data-main="assets/js/plugins/requireconfig.js" src="assets/js/plugins/require.js"></script>
+    <!--<script type="text/javascript" src="assets/js/data.js"></script>-->
+    <!--<script type="text/javascript" src="assets/js/scaleImg.js"></script>-->
 
     <!-- CSS (load bootstrap from a CDN) -->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
@@ -23,53 +23,13 @@
             <h2>Wedge blends form with functional beauty</h2>
             <p>The essential new shape of BRAVIA blends aesthetics with functional beauty. The small footprint saves space, while sound is enhanced by larger speaker capacity.</p>
         </div>
-        <!--<script type="text/babel" src="views/components/hotspots/image-wrapper.js"></script>-->
-
-        <div class="col-xs-5 p-0 pr-9 col-1">
-            <div class="imgScl">
-                <img src="assets/img/img-1.jpg" class="scale" data-scale="best-fill" data-align="top-left">
-                <span class="plus-btn-wrapper">
-                    <span class="plus-btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </span>
-                </span>
-            </div>
-        </div>
-        <div class="col-xs-7 p-0 pl-9 col-2">
-            <div class="imgScl">
-                <img src="assets/img/img-2.jpg" class="scale" data-scale="best-fill" data-align="bottom-right">
-                <span class="plus-btn-wrapper">
-                    <span class="plus-btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </span>
-                </span>
-            </div>
-        </div>
-        <div class="h-18 clear-both"></div>
-        <div class="col-xs-5 p-0 pr-9 col-1">
-            <div class="imgScl">
-                <img src="assets/img/img-3.jpg" class="scale" data-scale="best-fill" data-align="bottom-left">
-                <span class="plus-btn-wrapper">
-                    <span class="plus-btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </span>
-                </span>
-            </div>
-        </div>
-        <div class="col-xs-7 p-0 pl-9 col-2">
-            <div class="imgScl">
-                <img src="assets/img/img-4.jpg" class="scale" data-scale="best-fill" data-align="bottom-left">
-                <span class="plus-btn-wrapper">
-                    <span class="plus-btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </span>
-                </span>
-            </div>
-        </div>
-        <div class="h-18 clear-both"></div>
-        <script type="text/javascript">
-            document.querySelectorAll(".scale").scaleImg();
-        </script>
+        <div id="hotspots"></div>
+        <script type="text/babel" src="views/components/hotspots/spots.js"></script>
+        <!--<script type="text/javascript">-->
+            <!--require(['../core/scaleImg'],function () {-->
+                <!--document.querySelectorAll(".scale").scaleImg();-->
+            <!--});-->
+        <!--</script>-->
     </main>
     <footer>
         <p class="text-center text-muted">© Copyright 2014 The Awesome People</p>
