@@ -104,7 +104,7 @@ var data = {
                             "assetHandle": [
                                 "a|23104311"
                             ],
-                            "externalUrl": "//sonyglobal.scene7.com/is/image/gwtprod/93a8c28123eede1d42d33871e6553daf?fmt=jpeg"
+                            "externalUrl": "//sonyglobal.scene7.com/is/image/gwtprod/93a8c28123eede1d42d33871e6553daf?fmt=jpeg&wid=1400&qlt=85"
                         }
                     }
                 }
