@@ -13,7 +13,7 @@ var ImageScale = function(element, options) {
     var parent = that.parent = options.parent?options.parent:element.parentElement;
 
     if(parent){
-        that.hotSpot = parent.querySelector("span.plus-btn-wrapper");
+        that.hotSpot = parent.parentElement.querySelector("span.plus-btn-wrapper");
         that.hotSpotPoint = new Array(that.hotSpot.getAttribute('data-x'),that.hotSpot.getAttribute('data-y'));
     }
 

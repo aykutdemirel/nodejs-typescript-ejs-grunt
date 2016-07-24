@@ -5975,20 +5975,45 @@ h2 {
 .minipopup {
   position: absolute;
   width: 280px;
+  left: -287px;
   background-color: #fff;
   padding: 30px 40px 29px 30px;
   opacity: 0;
   -moz-box-shadow: 0 0 30px rgba(39, 43, 55, 0.15);
   -webkit-box-shadow: 0 0 30px rgba(39, 43, 55, 0.15);
   box-shadow: 0 0 30px rgba(39, 43, 55, 0.15);
-  z-index: 3;
   -webkit-transition: 0.1s ease-out;
-  transition: 0.1s ease-out; }
+  transition: 0.1s ease-out;
+  visibility: hidden;
+  z-index: 3; }
+
+.minipopup.active {
+  visibility: visible; }
+
+.minipopup.left {
+  left: -278px; }
+
+.minipopup.right {
+  left: 50px; }
 
 .minipopup.opacity-1 {
   opacity: 1; }
 
-.minipopup:after, .minipopup:before {
+.minipopup.right:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(252, 252, 252, 0);
+  border-right-color: #fcfcfc;
+  border-width: 11px;
+  margin-top: -11px; }
+
+.minipopup.left:after {
   left: 100%;
   top: 50%;
   border: solid transparent;
@@ -5996,15 +6021,9 @@ h2 {
   height: 0;
   width: 0;
   position: absolute;
-  pointer-events: none; }
-
-.minipopup:after {
+  pointer-events: none;
   border-color: rgba(252, 252, 252, 0);
   border-left-color: #fcfcfc;
-  border-width: 10px;
-  margin-top: -10px; }
-
-.minipopup:before {
   border-width: 11px;
   margin-top: -11px; }
 
@@ -6031,5 +6050,12 @@ h2 {
 @media (max-width: 61.1875em) and (min-width: 48em) {
   .imgScl {
     height: 422px; } }
+@media (max-width: 767px) {
+  div.col-md-5.col-sm-5.col-xs-12 {
+    padding: 0;
+    margin: 0 0 20px 0; }
+
+  div.col-md-7.col-sm-7.col-xs-12 {
+    padding: 0; } }
 
 /*# sourceMappingURL=main.css.map */
