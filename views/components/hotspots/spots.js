@@ -1,29 +1,45 @@
-function getWindowSize() {
+// this part developed using by module design pattern for helpers functions
 
-    var size = {width:0,height:0};
+var helpers = function(){
 
-    if (self.innerWidth) {
-        size.width = self.innerWidth;
+    var self = {};
+
+    self.getWindowSize = function () {
+
+        var size = {width:0,height:0};
+
+        if (self.innerWidth) {
+            size.width = self.innerWidth;
+        }
+        else if (document.documentElement && document.documentElement.clientHeight){
+            size.width = document.documentElement.clientWidth;
+        }
+        else if (document.body) {
+            size.width = document.body.clientWidth;
+        }
+
+        if (self.innerHeight) {
+            size.height = self.innerHeight;
+        }else if (document.documentElement && document.documentElement.clientHeight) {
+            size.height = document.documentElement.clientHeight;
+        }else if (document.body) {
+            size.height = document.body.clientHeight;
+        }
+
+        return size;
+    };
+
+    self.init = function () {
+        // if we need another initialize method, we run at here
+
+        return self;
     }
-    else if (document.documentElement && document.documentElement.clientHeight){
-        size.width = document.documentElement.clientWidth;
-    }
-    else if (document.body) {
-        size.width = document.body.clientWidth;
-    }
 
-    if (self.innerHeight) {
-        size.height = self.innerHeight;
-    }else if (document.documentElement && document.documentElement.clientHeight) {
-        size.height = document.documentElement.clientHeight;
-    }else if (document.body) {
-        size.height = document.body.clientHeight;
-    }
+    return self;
 
-    return size;
+}().init();
 
-}
-
+//minipopup
 var MiniPopup = React.createClass({
     render:function () {
         return(
@@ -35,6 +51,8 @@ var MiniPopup = React.createClass({
     }
 });
 
+
+//spot button
 var SpotButton = React.createClass({
     getInitialState: function() {
         return {
@@ -44,7 +62,7 @@ var SpotButton = React.createClass({
     },
     handleClick:function () {
 
-        var windowSize = getWindowSize();
+        var windowSize = helpers.getWindowSize();
 
         if(windowSize.width<767){
 
@@ -94,6 +112,9 @@ var SpotButton = React.createClass({
     }
 });
 
+
+//smallspot
+
 var SmallSpot = React.createClass({
     render: function() {
         return (
@@ -111,6 +132,7 @@ var SmallSpot = React.createClass({
     }
 });
 
+//largespot
 var LargeSpot = React.createClass({
     render: function() {
         return (
@@ -128,6 +150,7 @@ var LargeSpot = React.createClass({
     }
 });
 
+//data loaded using by requirejs and our module starts
 require(['../assets/js/core/data.js'],function () {
     var Spots = React.createClass({
         componentDidMount: function() {
