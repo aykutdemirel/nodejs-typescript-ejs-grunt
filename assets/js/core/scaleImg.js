@@ -391,8 +391,8 @@ Object.prototype.scaleImg = function (options) {
 
         var didLoad = img.complete,
             formattedOpt = this.mergeObjects(),
-            loadFunc = function() {
-                var data = new ImageScale(that, formattedOpt);
+            loadFunc = function(img) {
+                var data = new ImageScale(img, formattedOpt);
                 data.scale(true, formattedOpt);
             };
 
@@ -401,7 +401,7 @@ Object.prototype.scaleImg = function (options) {
         }
         else {
             img.addEventListener('load', function() {
-                loadFunc();
+                loadFunc(this);
             });
             img.setAttribute("src", img.getAttribute("src"));
         }
