@@ -5809,6 +5809,11 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+/*mixins*/
+/*mixins end*/
+/*variables*/
+/*variables end*/
+/*fonts*/
 @font-face {
   font-family: "SST W01 Roman";
   src: url("../fonts/sony/SSTW02Roman.eot");
@@ -5817,6 +5822,8 @@ button.close {
   font-family: "SST W01 Medium";
   src: url("../fonts/sony/SSTW02Medium.eot");
   src: url("../fonts/sony/SSTW02Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/sony/SSTW02Medium.woff2") format("woff2"), url("../fonts/sony/SSTW02Medium.woff") format("woff"), url("../fonts/sony/SSTW02Medium.ttf") format("truetype"); }
+/*fonts end*/
+/*generic styles*/
 body {
   font-family: "SST W01 Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility; }
@@ -5903,12 +5910,13 @@ h2 {
   max-width: 1190px;
   margin: 0 auto; }
 
+/*generic usage styles end*/
+/*plus button*/
 .plus-btn-wrapper {
   position: absolute;
   cursor: pointer;
   background-color: rgba(80, 77, 86, 0.3);
   display: block;
-  z-index: 1;
   top: 50%;
   left: 50%;
   margin: -25px 0 0 -25px;
@@ -5972,6 +5980,8 @@ h2 {
   -ms-transform: scale(1.1);
   transform: scale(1.1); }
 
+/*plus button end*/
+/*minipopup*/
 .minipopup {
   position: absolute;
   width: 280px;
@@ -6041,6 +6051,15 @@ h2 {
   font-size: 13px;
   color: #83838f; }
 
+/*minipopup end*/
+.minipopup.mobile {
+  position: fixed;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 100% !important; }
+
+/*media*/
 @media (min-width: 75em) {
   .container {
     width: 92.5%; }
@@ -6057,5 +6076,6 @@ h2 {
 
   div.col-md-7.col-sm-7.col-xs-12 {
     padding: 0; } }
+/*media end*/
 
 /*# sourceMappingURL=main.css.map */

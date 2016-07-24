@@ -1,6 +1,7 @@
 
 @import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
+/*mixins*/
 @mixin sony_border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
@@ -26,17 +27,55 @@
     box-shadow: $shadow;
 }
 
+@mixin sony_rotateY($rotate) {
+    -webkit-transform: rotateY($rotate);
+    -moz-transform: rotateY($rotate);
+    -o-transform: rotateY($rotate);
+    transform: rotateY($rotate);
+}
+
 @mixin sony_transition($transition){
     -webkit-transition: $transition;
     transition: $transition;
 }
 
+@mixin sony_3d_transition($ms) {
+    -webkit-transition: $ms;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: $ms;
+    -moz-transform-style: preserve-3d;
+    -o-transition: $ms;
+    -o-transform-style: preserve-3d;
+    transition: $ms;
+    transform-style: preserve-3d;
+}
+
+@mixin sony_perspective($perspective){
+    -webkit-perspective: $perspective;
+    -moz-perspective: $perspective;
+    -o-perspective: $perspective;
+    perspective: $perspective;
+}
+
+@mixin sony_backface_visibility(){
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/*mixins end*/
+
+
+/*variables*/
 $font-url: "../fonts/sony/";
 $font-roman: "SST W01 Roman";
 $font-medium: "SST W01 Medium";
 $font-roman-file-name:"SSTW02Roman";
 $font-medium-file-name:"SSTW02Medium";
+/*variables end*/
 
+/*fonts*/
 @font-face {
     font-family: $font-roman;
     src: url('#{$font-url}#{$font-roman-file-name}.eot');
@@ -54,7 +93,9 @@ $font-medium-file-name:"SSTW02Medium";
     url('#{$font-url}#{$font-medium-file-name}.woff') format("woff"),
     url('#{$font-url}#{$font-medium-file-name}.ttf') format("truetype");
 }
+/*fonts end*/
 
+/*generic styles*/
 body{
     font-family: $font-roman,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-rendering: optimizeLegibility;
@@ -155,13 +196,15 @@ h2{
     max-width: 1190px;
     margin: 0 auto;
 }
+/*generic usage styles end*/
+
+/*plus button*/
 
 .plus-btn-wrapper {
     position: absolute;
     cursor: pointer;
     background-color: rgba(80,77,86,0.3);
     display: block;
-    z-index: 1;
     top: 50%;
     left: 50%;
     margin: -25px 0 0 -25px;
@@ -215,6 +258,9 @@ h2{
     opacity: 0.8;
     @include sony_scale(1.1);
 }
+/*plus button end*/
+
+/*minipopup*/
 
 .minipopup {
     position: absolute;
@@ -290,7 +336,18 @@ h2{
     font-size: 13px;
     color: #83838f;
 }
+/*minipopup end*/
 
+
+.minipopup.mobile {
+    position:fixed;
+    left:0 !important;
+    top:0 !important;
+    right:0 !important;
+    width:100% !important;
+}
+
+/*media*/
 @media (min-width: 75em) {
     .container {
         width: 92.5%;
@@ -314,3 +371,4 @@ h2{
         padding:0;
     }
 }
+/*media end*/
