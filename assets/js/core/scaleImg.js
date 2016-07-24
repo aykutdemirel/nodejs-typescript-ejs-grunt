@@ -397,7 +397,7 @@ Object.prototype.scaleImg = function (options) {
             };
 
         if (didLoad) {
-            loadFunc.apply(that);
+            loadFunc(img);
         }
         else {
             img.addEventListener('load', function() {
