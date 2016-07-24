@@ -20,6 +20,12 @@
     transform: scale($scale);
 }
 
+@mixin sony_box_shadow($shadow){
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
 @mixin sony_transition($transition){
     -webkit-transition: $transition;
     transition: $transition;
@@ -164,6 +170,7 @@ h2{
     @include sony_border-radius(50%);
 }
 
+
 .plus-btn {
     position: absolute;
     color: #fff;
@@ -183,6 +190,10 @@ h2{
     @include sony_border-radius(50%);
 }
 
+.plus-btn-wrapper.on .plus-btn {
+    background: #504d56;
+}
+
 .plus-btn .glyphicon {
     top:0;
     height: 40px;
@@ -196,14 +207,68 @@ h2{
     @include sony_transition(0.1s ease-out);
 }
 
+.plus-btn-wrapper.on .plus-btn .glyphicon {
+    @include sony_transform(45deg);
+}
+
 .plus-btn:hover {
+    opacity: 0.8;
     @include sony_scale(1.1);
 }
 
-.plus-btn:hover .glyphicon {
-    //@include sony_transform(45deg);
+.minipopup {
+    position: absolute;
+    width:280px;
+    background-color: #fff;
+    padding:30px 40px 29px 30px;
+    opacity:0;
+    @include sony_box_shadow(0 0 30px rgba(39,43,55,0.15));
+    z-index: 3;
+    @include sony_transition(0.1s ease-out);
 }
 
+.minipopup.opacity-1{
+    opacity: 1;
+}
+
+.minipopup:after, .minipopup:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.minipopup:after {
+    border-color: rgba(252, 252, 252, 0);
+    border-left-color: #fcfcfc;
+    border-width: 10px;
+    margin-top: -10px;
+}
+
+.minipopup:before {
+    border-width: 11px;
+    margin-top: -11px;
+}
+
+.minipopup h4{
+    margin:0 0 10px 0;
+    font-family: $font-medium,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.minipopup p{
+    font-family: $font-roman,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color: #83838f;
+}
 
 @media (min-width: 75em) {
     .container {
