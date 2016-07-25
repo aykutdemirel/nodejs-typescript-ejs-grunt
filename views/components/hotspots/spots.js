@@ -82,12 +82,6 @@ var SpotButton = React.createClass({
 
         }else{
 
-            if(!this.state.condition && clicked){
-                document.body.style.overflow = "hidden";
-            }else{
-                document.body.style.overflow = "auto";
-            }
-
             document.body.style.overflow = "auto";
 
             this.refs.minitemplate.refs.minipopup.style.height = "auto";
