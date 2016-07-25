@@ -62,18 +62,17 @@ var SpotButton = React.createClass({
             isMobile: false
         }
     },
-    handleClick:function () {
+    checkMobile:function(clicked){
 
         var windowSize = helpers.getWindowSize();
 
         if(windowSize.width<767){
 
             this.setState({
-                condition: !this.state.condition,
                 isMobile: true
             });
 
-            if(!this.state.condition){
+            if(!this.state.condition && clicked){
                 document.body.style.overflow = "hidden";
             }else{
                 document.body.style.overflow = "auto";
@@ -83,7 +82,7 @@ var SpotButton = React.createClass({
 
         }else{
 
-            if(!this.state.condition){
+            if(!this.state.condition && clicked){
                 document.body.style.overflow = "hidden";
             }else{
                 document.body.style.overflow = "auto";
@@ -94,11 +93,20 @@ var SpotButton = React.createClass({
             this.refs.minitemplate.refs.minipopup.style.height = "auto";
 
             this.setState({
-                condition: !this.state.condition,
                 isMobile: false
             });
 
         }
+    },
+    componentDidMount: function() {
+        this.checkMobile();
+    },
+    handleClick:function () {
+
+        this.checkMobile(true);
+        this.setState({
+            condition: !this.state.condition
+        });
 
         this.refs.minitemplate.refs.minipopup.style.top = (((this.refs.minitemplate.refs.minipopup.offsetHeight*-1)/2)+25) + "px";
     },
