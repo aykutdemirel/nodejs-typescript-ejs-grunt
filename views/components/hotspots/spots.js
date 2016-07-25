@@ -1,3 +1,5 @@
+var data = {};
+
 // this part developed using by module design pattern for helpers functions
 
 var helpers = function(){
@@ -120,11 +122,7 @@ var SmallSpot = React.createClass({
         return (
             <div className="col-md-5 col-sm-5 col-xs-12 p-0 pr-9">
                 <div className="imgScl">
-                    <img src="assets/img/img-1.jpg" className="scale" data-scale="best-fill" data-align="top-left" />
-                    <div className="back">
-                        <h4>{data.module.hotSpots.popups[0].headline}</h4>
-                        <p>{data.module.hotSpots.popups[0].bodyCopy}</p>
-                    </div>
+                    <img src={data.module.hotSpots.image.imageFamily.images.desktop.internalUrl[0]} className="scale" data-scale="best-fill" data-align="top-left" />
                 </div>
                 <SpotButton popupPosition="right" position={data.module.hotSpots.popups[0].config.coords} title={data.module.hotSpots.popups[0].headline} body={data.module.hotSpots.popups[0].bodyCopy} />
             </div>
@@ -138,11 +136,7 @@ var LargeSpot = React.createClass({
         return (
             <div className="col-md-7 col-sm-7 col-xs-12 p-0 pl-9">
                 <div className="imgScl">
-                    <img src="assets/img/img-2.jpg" className="scale" data-scale="best-fill" data-align="bottom-right" />
-                    <div className="back">
-                        <h4>{data.module.hotSpots.popups[1].headline}</h4>
-                        <p>{data.module.hotSpots.popups[1].bodyCopy}</p>
-                    </div>
+                    <img src={data.module.hotSpots.image.imageFamily.images.desktop.internalUrl[1]} className="scale" data-scale="best-fill" data-align="bottom-right" />
                 </div>
                 <SpotButton popupPosition="left" position={data.module.hotSpots.popups[1].config.coords} title={data.module.hotSpots.popups[1].headline} body={data.module.hotSpots.popups[1].bodyCopy} />
             </div>
@@ -151,10 +145,13 @@ var LargeSpot = React.createClass({
 });
 
 //data loaded using by requirejs and our module starts
-require(['../assets/js/core/data.js'],function () {
+require(['data'],function () {
+
+    data = window.data;
+
     var Spots = React.createClass({
         componentDidMount: function() {
-            require(['../assets/js/core/scaleImg'],function () {
+            require(['scaleImg'],function () {
                 document.querySelectorAll(".scale").scaleImg();
             });
         },

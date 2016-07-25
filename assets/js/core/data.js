@@ -95,7 +95,7 @@ var data = {
                     ],
                     "images": {
                         "desktop": {
-                            "internalUrl": "https://prod-imgws.sony.eu/cms/images/Electronics/05_Televisions_and_Home_Cinema/01_Televisions/X9405C-X9305C-Series/E-Hot-PDP-X94-X93-en_GL-2015-03-M24-fullflush_desktop.jpg",
+                            "internalUrl": ["https://s3-us-west-2.amazonaws.com/s.cdpn.io/655431/img-1.jpg","https://s3-us-west-2.amazonaws.com/s.cdpn.io/655431/img-2.jpg"],
                             "mimeType": "image/jpg",
                             "uploadAttempts": 1,
                             "uploadLastAttemptAt": 1427203801114,
@@ -116,3 +116,5 @@ var data = {
     "moduleId": "editorial_hotspots_590359239320250140028",
     "moduleName": "editorial_hotspots"
 };
+
+window.data = data;
