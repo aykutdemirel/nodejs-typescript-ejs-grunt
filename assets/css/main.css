@@ -245,10 +245,10 @@ h2 {
 @media (max-width: 61.1875em) and (min-width: 48em) {
   .imgScl {
     height: 422px; } }
-div.col-md-5.col-sm-5.col-xs-12 {
-  padding: 0;
-  margin: 0 0 20px 0; }
-
+@media (max-width: 767px) {
+  div.col-md-5.col-sm-5.col-xs-12 {
+    padding: 0;
+    margin: 0 0 20px 0; } }
 div.col-md-7.col-sm-7.col-xs-12 {
   padding: 0; }
 

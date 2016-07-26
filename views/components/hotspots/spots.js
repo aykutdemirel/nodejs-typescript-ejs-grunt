@@ -146,6 +146,9 @@ var LargeSpot = React.createClass({
     }
 });
 
+
+
+
 //data loaded using by requirejs and our module starts
 require(['data'],function () {
 
